@@ -87,12 +87,12 @@
 <meta property="og:site_name" content="Lucas&#39;s Blog">
 <meta property="og:description" content="这是一些常用方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="/images/amazeUI-modal/banner.png">
-<meta property="og:updated_time" content="2017-11-20T10:25:59.400Z">
+<meta property="og:image" content="/images/amazeUI-modal/timg.jpg">
+<meta property="og:updated_time" content="2017-11-21T02:51:11.837Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用方法">
 <meta name="twitter:description" content="这是一些常用方法。">
-<meta name="twitter:image" content="/images/amazeUI-modal/banner.png">
+<meta name="twitter:image" content="/images/amazeUI-modal/timg.jpg">
 
 
 
@@ -317,8 +317,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/function/" itemprop="url" rel="index">
-                    <span itemprop="name">function</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,922 字
+                  2,350 字
                 </span>
               
 
@@ -375,7 +375,7 @@
                   <span class="post-meta-item-text">阅读时长&#58;</span>
                 
                 <span title="阅读时长">
-                  10 分钟
+                  12 分钟
                 </span>
               
             </div>
@@ -396,7 +396,7 @@
       
 
       
-        <p><img src="/images/amazeUI-modal/banner.png" alt=""><br>这是一些常用方法。<br><a id="more"></a></p>
+        <p><img src="/images/amazeUI-modal/timg.jpg" alt=""><br>这是一些常用方法。<br><a id="more"></a></p>
 <h4 id="读取cookid"><a href="#读取cookid" class="headerlink" title="读取cookid"></a>读取cookid</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> getCookie(name)</div><div class="line">	&#123;</div><div class="line">		var arr,reg=new RegExp(<span class="string">"(^| )"</span>+name+<span class="string">"=([^;]*)(;|$)"</span>);</div><div class="line">		<span class="keyword">if</span>(arr=document.cookie.match(reg))</div><div class="line">		<span class="built_in">return</span> unescape(arr[2]);</div><div class="line">		<span class="keyword">else</span></div><div class="line">		<span class="built_in">return</span> null;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
 <p>参数说明：</p>
 <ul>
@@ -474,6 +474,33 @@
 <p>参数说明：</p>
 <ul>
 <li>target   上传的图片对象</li>
+</ul>
+<h4 id="四舍五入，保留两位小数后，转为百分比，如果是含有“-00”，则去掉"><a href="#四舍五入，保留两位小数后，转为百分比，如果是含有“-00”，则去掉" class="headerlink" title="四舍五入，保留两位小数后，转为百分比，如果是含有“.00”，则去掉"></a>四舍五入，保留两位小数后，转为百分比，如果是含有“.00”，则去掉</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span>  toPercent(number)&#123;</div><div class="line">	<span class="keyword">if</span>(number==null&amp;&amp;number==<span class="string">''</span>||number==<span class="string">'null'</span>)&#123;</div><div class="line">		<span class="built_in">return</span> <span class="string">""</span>;</div><div class="line">	&#125;</div><div class="line">	number=Number(number*100).toFixed(2);</div><div class="line">	number=number.toString();</div><div class="line">	<span class="keyword">if</span>(number.indexOf(<span class="string">".00"</span>)&gt;0)&#123;</div><div class="line">		number=number.substring(0,number.indexOf(<span class="string">".00"</span>));</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">return</span> number+<span class="string">'%'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>参数说明：</p>
+<ul>
+<li>number</li>
+</ul>
+<h4 id="加法函数，用来得到精确的加法结果"><a href="#加法函数，用来得到精确的加法结果" class="headerlink" title="加法函数，用来得到精确的加法结果"></a>加法函数，用来得到精确的加法结果</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> accAdd(arg1,arg2)&#123;</div><div class="line">	<span class="keyword">if</span>(!arg1 || arg1 == <span class="string">""</span>)&#123;</div><div class="line">		arg1 = 0.0;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(!arg2 || arg2 == <span class="string">""</span>)&#123;</div><div class="line">		arg2 = 0.0;</div><div class="line">	&#125;</div><div class="line">	var r1,r2,m;</div><div class="line">	try&#123;r1=arg1.toString().split(<span class="string">"."</span>)[1].length&#125;catch(e)&#123;r1=0&#125;</div><div class="line">	try&#123;r2=arg2.toString().split(<span class="string">"."</span>)[1].length&#125;catch(e)&#123;r2=0&#125;</div><div class="line">	m=Math.pow(10,Math.max(r1,r2));</div><div class="line">	<span class="built_in">return</span> (accMul(arg1,m)+accMul(arg2,m))/m;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>参数说明：</p>
+<ul>
+<li>说明：javascript的加法 结果会有误差，在两个浮点数相加的时候会比较明显。这个函数返回较为精确的加法结果。</li>
+<li>arg1,arg2 两个加数</li>
+<li>返回值：arg1加上arg2的精确结果</li>
+</ul>
+<h4 id="减法函数"><a href="#减法函数" class="headerlink" title="减法函数"></a>减法函数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> subtr(arg1, arg2) &#123; </div><div class="line">	<span class="keyword">if</span>(arg1==null||arg1==<span class="string">''</span>||arg2==null||arg2==<span class="string">''</span>||arg1==<span class="string">'undefined'</span>||arg2==<span class="string">'undefined'</span>)&#123;</div><div class="line">		<span class="built_in">return</span> 0;</div><div class="line">	&#125;</div><div class="line">    var r1, r2, m, n;  </div><div class="line">    try &#123;  </div><div class="line">        r1 = arg1.toString().split(<span class="string">"."</span>)[1].length;  </div><div class="line">    &#125;  </div><div class="line">    catch (e) &#123;  </div><div class="line">        r1 = 0;  </div><div class="line">    &#125;  </div><div class="line">    try &#123;  </div><div class="line">        r2 = arg2.toString().split(<span class="string">"."</span>)[1].length;  </div><div class="line">    &#125;  </div><div class="line">    catch (e) &#123;  </div><div class="line">        r2 = 0;  </div><div class="line">    &#125;  </div><div class="line">    m = Math.pow(10, Math.max(r1, r2));  </div><div class="line">     //last modify by deeka  </div><div class="line">     //动态控制精度长度  </div><div class="line">    n = (r1 &gt;= r2) ? r1 : r2;  </div><div class="line">    <span class="built_in">return</span> ((arg1 * m - arg2 * m) / m).toFixed(n);  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>参数说明：</p>
+<ul>
+<li>arg1,arg2</li>
+</ul>
+<h4 id="两个数相除"><a href="#两个数相除" class="headerlink" title="两个数相除"></a>两个数相除</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> accDiv(arg1,arg2)&#123; </div><div class="line">	<span class="keyword">if</span>(arg1==null||arg1==<span class="string">''</span>||arg2==null||arg2==<span class="string">''</span>||arg1==<span class="string">'undefined'</span>||arg2==<span class="string">'undefined'</span>)&#123;</div><div class="line">		<span class="built_in">return</span> 0;</div><div class="line">	&#125;</div><div class="line">    var t1=0,t2=0,r1,r2; </div><div class="line">    try&#123;t1=arg1.toString().split(<span class="string">"."</span>)[1].length&#125;catch(e)&#123;&#125; </div><div class="line">    try&#123;t2=arg2.toString().split(<span class="string">"."</span>)[1].length&#125;catch(e)&#123;&#125; </div><div class="line">    with(Math)&#123; </div><div class="line">        r1=Number(arg1.toString().replace(<span class="string">"."</span>,<span class="string">""</span>)); </div><div class="line">        r2=Number(arg2.toString().replace(<span class="string">"."</span>,<span class="string">""</span>)); </div><div class="line">        <span class="built_in">return</span> (r1/r2)*pow(10,t2-t1); </div><div class="line">    &#125; </div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>参数说明：</p>
+<ul>
+<li>arg1,arg2</li>
+</ul>
+<h4 id="两个数相乘"><a href="#两个数相乘" class="headerlink" title="两个数相乘"></a>两个数相乘</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> accMul(arg1,arg2) </div><div class="line">&#123; </div><div class="line">	<span class="keyword">if</span>(arg1==null||arg1==<span class="string">''</span>||arg2==null||arg2==<span class="string">''</span>||arg1==<span class="string">'undefined'</span>||arg2==<span class="string">'undefined'</span>)&#123;</div><div class="line">		<span class="built_in">return</span> 0;</div><div class="line">	&#125;</div><div class="line">    var m=0,s1=arg1.toString(),s2=arg2.toString(); </div><div class="line">    try&#123;m+=s1.split(<span class="string">"."</span>)[1].length&#125;catch(e)&#123;&#125; </div><div class="line">    try&#123;m+=s2.split(<span class="string">"."</span>)[1].length&#125;catch(e)&#123;&#125; </div><div class="line">    <span class="built_in">return</span> Number(s1.replace(<span class="string">"."</span>,<span class="string">""</span>))*Number(s2.replace(<span class="string">"."</span>,<span class="string">""</span>))/Math.pow(10,m); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>参数说明：</p>
+<ul>
+<li>arg1,arg2</li>
 </ul>
 
       
@@ -672,7 +699,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#读取cookid"><span class="nav-number">1.</span> <span class="nav-text">读取cookid</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取url参数值"><span class="nav-number">2.</span> <span class="nav-text">获取url参数值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串加-号处理"><span class="nav-number">3.</span> <span class="nav-text">字符串加*号处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取-页面上的-元素兼容-all-getById-getByName"><span class="nav-number">4.</span> <span class="nav-text">获取 页面上的 元素兼容 all,getById, getByName</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动补全表格行，自定义行数，td数固定为表头th数量"><span class="nav-number">5.</span> <span class="nav-text">自动补全表格行，自定义行数，td数固定为表头th数量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复制一个对象，返回一个新的对象"><span class="nav-number">6.</span> <span class="nav-text">复制一个对象，返回一个新的对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断某个对象是否为数组"><span class="nav-number">7.</span> <span class="nav-text">判断某个对象是否为数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置-json-对象到-表单元素中-映射规则按照-json对象的属性名-追加前缀进行对应"><span class="nav-number">8.</span> <span class="nav-text">设置 json 对象到 表单元素中, 映射规则按照 json对象的属性名 追加前缀进行对应</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将本身的日期对象按格式化的方式输出成字符串"><span class="nav-number">9.</span> <span class="nav-text">将本身的日期对象按格式化的方式输出成字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将字符串，格式化为日期对象"><span class="nav-number">10.</span> <span class="nav-text">将字符串，格式化为日期对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#金额格式化，保留n位数，四舍五入；s-null-s-””，返回””；整数部分默认千分位分隔"><span class="nav-number">11.</span> <span class="nav-text">金额格式化，保留n位数，四舍五入；s==null || s==””，返回””；整数部分默认千分位分隔</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四舍五入，保留两位小数后，转为百分比-如果是含有“-00”，则去掉"><span class="nav-number">12.</span> <span class="nav-text">四舍五入，保留两位小数后，转为百分比,如果是含有“.00”，则去掉</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断上传的图片格式和大小"><span class="nav-number">13.</span> <span class="nav-text">判断上传的图片格式和大小</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#读取cookid"><span class="nav-number">1.</span> <span class="nav-text">读取cookid</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取url参数值"><span class="nav-number">2.</span> <span class="nav-text">获取url参数值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串加-号处理"><span class="nav-number">3.</span> <span class="nav-text">字符串加*号处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取-页面上的-元素兼容-all-getById-getByName"><span class="nav-number">4.</span> <span class="nav-text">获取 页面上的 元素兼容 all,getById, getByName</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自动补全表格行，自定义行数，td数固定为表头th数量"><span class="nav-number">5.</span> <span class="nav-text">自动补全表格行，自定义行数，td数固定为表头th数量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复制一个对象，返回一个新的对象"><span class="nav-number">6.</span> <span class="nav-text">复制一个对象，返回一个新的对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断某个对象是否为数组"><span class="nav-number">7.</span> <span class="nav-text">判断某个对象是否为数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置-json-对象到-表单元素中-映射规则按照-json对象的属性名-追加前缀进行对应"><span class="nav-number">8.</span> <span class="nav-text">设置 json 对象到 表单元素中, 映射规则按照 json对象的属性名 追加前缀进行对应</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将本身的日期对象按格式化的方式输出成字符串"><span class="nav-number">9.</span> <span class="nav-text">将本身的日期对象按格式化的方式输出成字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将字符串，格式化为日期对象"><span class="nav-number">10.</span> <span class="nav-text">将字符串，格式化为日期对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#金额格式化，保留n位数，四舍五入；s-null-s-””，返回””；整数部分默认千分位分隔"><span class="nav-number">11.</span> <span class="nav-text">金额格式化，保留n位数，四舍五入；s==null || s==””，返回””；整数部分默认千分位分隔</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四舍五入，保留两位小数后，转为百分比-如果是含有“-00”，则去掉"><span class="nav-number">12.</span> <span class="nav-text">四舍五入，保留两位小数后，转为百分比,如果是含有“.00”，则去掉</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断上传的图片格式和大小"><span class="nav-number">13.</span> <span class="nav-text">判断上传的图片格式和大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四舍五入，保留两位小数后，转为百分比，如果是含有“-00”，则去掉"><span class="nav-number">14.</span> <span class="nav-text">四舍五入，保留两位小数后，转为百分比，如果是含有“.00”，则去掉</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加法函数，用来得到精确的加法结果"><span class="nav-number">15.</span> <span class="nav-text">加法函数，用来得到精确的加法结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#减法函数"><span class="nav-number">16.</span> <span class="nav-text">减法函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两个数相除"><span class="nav-number">17.</span> <span class="nav-text">两个数相除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两个数相乘"><span class="nav-number">18.</span> <span class="nav-text">两个数相乘</span></a></li></ol></div>
             
 
           </div>
